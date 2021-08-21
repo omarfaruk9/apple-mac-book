@@ -29,9 +29,7 @@ function totalCalculation() {
     // sub total
     const subTotal = bestPriceNum + moneyNum + storageNum + deliveryNum;
     document.getElementById('total-price').innerText = subTotal;
-
-    const updatePrice = document.getElementById('discount-total').innerText = subTotal;
-
+    document.getElementById('total').innerText = subTotal;
 }
 
 // event  handler
@@ -82,12 +80,15 @@ document.getElementById('delivery-charge-two').addEventListener('click', functio
 
 document.getElementById('promo-button').addEventListener('click', function () {
     const inputField = document.getElementById('promo-input');
-    let discountPrice = document.getElementById('discount-total');
-    discountPrice = parseFloat(discountPrice.innerText);
-
+    const totalPrice = document.getElementById('total-price').innerText;
+    const total = document.getElementById('total');
+    
     const inputValue = inputField.value;
     if (inputValue == 'stevekaku') {
-        document.getElementById('discount-total').innerText = (discountPrice / 100) * 80;
+        total.innerText = totalPrice - totalPrice * 0.2;
         inputField.value = '';
+    }
+    else {
+        alert("Please inter your code");
     }
 })
