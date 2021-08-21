@@ -89,6 +89,6 @@ document.getElementById('promo-button').addEventListener('click', function () {
         inputField.value = '';
     }
     else {
-        alert("Please inter your code");
+        alert("Please enter your promo code for discount");
     }
 })
